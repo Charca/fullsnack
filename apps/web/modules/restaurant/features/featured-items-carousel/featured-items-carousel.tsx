@@ -1,7 +1,5 @@
-import React from 'react'
-
-export const FeaturedItemsCarousel: React.FC = () => (
-  <div className="flex space-x-4 mb-4 overflow-x-auto">
-    <div>FeaturedItemsCarousel content</div>
+export const FeaturedItemsCarousel = () => (
+  <div className="h-40 bg-purple-100 border-purple-600 border-2 p-4 rounded-lg flex flex-col items-center justify-center text-2xl font-mono text-purple-600">
+    <h1>FeaturedItemsCarousel</h1>
   </div>
 )
