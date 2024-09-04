@@ -1,182 +1,182 @@
 export const restaurants = [
   {
-    id: '1',
-    name: 'Taco Bell',
-    description:
-      'Taco Bell is a fast food restaurant that serves tacos and other Mexican-inspired dishes.',
-    logoUrl: '/taco-bell-logo.png',
-    heroImageUrl: '/taco-bell-hero.jpg',
-    categories: [
-      {
-        id: '1',
-        name: 'Fast Food',
-      },
-      {
-        id: '2',
-        name: 'Mexican',
-      },
-    ],
-    deliveryFee: 2.99,
-    deliveryTime: [10, 30],
-    offersDelivery: true,
-    offersPickup: true,
-    offersGroupOrders: true,
-    businessHours: ['08:00', '22:00'],
-    rating: 4.5,
-    numRatings: 100,
-    reviews: [
-      {
-        id: '1',
-        rating: 4.5,
-        comment: 'Great tacos!',
-        date: '2024-01-01',
-        user: {
+    attributes: {
+      id: '1',
+      name: 'Taco Bell',
+      description:
+        'Taco Bell is a fast food restaurant that serves tacos and other Mexican-inspired dishes.',
+      logoUrl: '/taco-bell-logo.png',
+      heroImageUrl: '/taco-bell-hero.jpg',
+      deliveryFee: 2.99,
+      deliveryTime: [10, 30],
+      offersDelivery: true,
+      offersPickup: true,
+      offersGroupOrders: true,
+      businessHours: ['08:00', '22:00'],
+      rating: 4.5,
+      numRatings: 100,
+    },
+    relationships: {
+      categories: ['1', '2'],
+      reviews: [
+        {
           id: '1',
-          name: 'John Doe',
+          rating: 4.5,
+          comment: 'Great tacos!',
+          date: '2024-01-01',
+          user: {
+            id: '1',
+            name: 'John Doe',
+          },
         },
-      },
-      {
-        id: '2',
-        rating: 4.0,
-        comment: 'The burritos are pretty good.',
-        date: '2024-01-02',
-        user: {
+        {
           id: '2',
-          name: 'Jane Doe',
+          rating: 4.0,
+          comment: 'The burritos are pretty good.',
+          date: '2024-01-02',
+          user: {
+            id: '2',
+            name: 'Jane Doe',
+          },
         },
-      },
-      {
-        id: '3',
-        rating: 3,
-        comment: 'Both the tacos and the burritos are okay.',
-        date: '2024-01-03',
-        user: {
+        {
           id: '3',
-          name: 'John Smith',
+          rating: 3,
+          comment: 'Both the tacos and the burritos are okay.',
+          date: '2024-01-03',
+          user: {
+            id: '3',
+            name: 'John Smith',
+          },
         },
-      },
-    ],
+      ],
+    },
+  },
+  {
+    attributes: {
+      id: '2',
+      name: 'McDonalds',
+      description:
+        'McDonalds is a fast food restaurant that serves burgers and other American-inspired dishes.',
+      logoUrl: '/mcdonalds-logo.png',
+      heroImageUrl: '/mcdonalds-hero.jpg',
+      deliveryFee: 3.99,
+      deliveryTime: [10, 30],
+      offersDelivery: true,
+      offersPickup: true,
+      offersGroupOrders: true,
+      businessHours: ['08:00', '22:00'],
+      rating: 4.5,
+      numRatings: 100,
+    },
+    relationships: {
+      categories: ['1', '3'],
+      reviews: [
+        {
+          id: '4',
+          rating: 4.5,
+          comment: 'Great burgers!',
+          date: '2024-01-01',
+          user: {
+            id: '1',
+            name: 'John Doe',
+          },
+        },
+        {
+          id: '5',
+          rating: 4.0,
+          comment: 'The fries are pretty good.',
+          date: '2024-01-02',
+          user: {
+            id: '2',
+            name: 'Jane Doe',
+          },
+        },
+        {
+          id: '6',
+          rating: 3,
+          comment: 'Both the burgers and the fries are okay.',
+          date: '2024-01-03',
+          user: {
+            id: '3',
+            name: 'John Smith',
+          },
+        },
+      ],
+    },
+  },
+  {
+    attributes: {
+      id: '3',
+      name: 'Chick-fil-A',
+      description:
+        'Chick-fil-A is a fast food restaurant that serves chicken sandwiches and other American-inspired dishes.',
+      logoUrl: '/chick-fil-a-logo.png',
+      heroImageUrl: '/chick-fil-a-hero.jpg',
+      deliveryFee: 4.99,
+      deliveryTime: [10, 30],
+      offersDelivery: true,
+      offersPickup: true,
+      offersGroupOrders: true,
+      businessHours: ['08:00', '22:00'],
+      rating: 4.5,
+      numRatings: 100,
+    },
+    relationships: {
+      categories: ['1', '3', '4'],
+      reviews: [
+        {
+          id: '7',
+          rating: 4.5,
+          comment: 'Great chicken sandwiches!',
+          date: '2024-01-01',
+          user: {
+            id: '1',
+            name: 'John Doe',
+          },
+        },
+        {
+          id: '8',
+          rating: 4.0,
+          comment: 'The chicken nuggets are pretty good.',
+          date: '2024-01-02',
+          user: {
+            id: '2',
+            name: 'Jane Doe',
+          },
+        },
+        {
+          id: '9',
+          rating: 3,
+          comment:
+            'Both the chicken sandwiches and the chicken nuggets are okay.',
+          date: '2024-01-03',
+          user: {
+            id: '3',
+            name: 'John Smith',
+          },
+        },
+      ],
+    },
+  },
+]
+
+export const restaurantCategories = [
+  {
+    id: '1',
+    name: 'Fast Food',
   },
   {
     id: '2',
-    name: 'McDonalds',
-    description:
-      'McDonalds is a fast food restaurant that serves burgers and other American-inspired dishes.',
-    logoUrl: '/mcdonalds-logo.png',
-    heroImageUrl: '/mcdonalds-hero.jpg',
-    categories: [
-      {
-        id: '1',
-        name: 'Fast Food',
-      },
-      {
-        id: '3',
-        name: 'American',
-      },
-    ],
-    deliveryFee: 3.99,
-    deliveryTime: [10, 30],
-    offersDelivery: true,
-    offersPickup: true,
-    offersGroupOrders: true,
-    businessHours: ['08:00', '22:00'],
-    rating: 4.5,
-    numRatings: 100,
-    reviews: [
-      {
-        id: '4',
-        rating: 4.5,
-        comment: 'Great burgers!',
-        date: '2024-01-01',
-        user: {
-          id: '1',
-          name: 'John Doe',
-        },
-      },
-      {
-        id: '5',
-        rating: 4.0,
-        comment: 'The fries are pretty good.',
-        date: '2024-01-02',
-        user: {
-          id: '2',
-          name: 'Jane Doe',
-        },
-      },
-      {
-        id: '6',
-        rating: 3,
-        comment: 'Both the burgers and the fries are okay.',
-        date: '2024-01-03',
-        user: {
-          id: '3',
-          name: 'John Smith',
-        },
-      },
-    ],
+    name: 'Mexican',
   },
   {
     id: '3',
-    name: 'Chick-fil-A',
-    description:
-      'Chick-fil-A is a fast food restaurant that serves chicken sandwiches and other American-inspired dishes.',
-    logoUrl: '/chick-fil-a-logo.png',
-    heroImageUrl: '/chick-fil-a-hero.jpg',
-    categories: [
-      {
-        id: '1',
-        name: 'Fast Food',
-      },
-      {
-        id: '3',
-        name: 'American',
-      },
-      {
-        id: '4',
-        name: 'Chicken',
-      },
-    ],
-    deliveryFee: 4.99,
-    deliveryTime: [10, 30],
-    offersDelivery: true,
-    offersPickup: true,
-    offersGroupOrders: true,
-    businessHours: ['08:00', '22:00'],
-    rating: 4.5,
-    numRatings: 100,
-    reviews: [
-      {
-        id: '7',
-        rating: 4.5,
-        comment: 'Great chicken sandwiches!',
-        date: '2024-01-01',
-        user: {
-          id: '1',
-          name: 'John Doe',
-        },
-      },
-      {
-        id: '8',
-        rating: 4.0,
-        comment: 'The chicken nuggets are pretty good.',
-        date: '2024-01-02',
-        user: {
-          id: '2',
-          name: 'Jane Doe',
-        },
-      },
-      {
-        id: '9',
-        rating: 3,
-        comment:
-          'Both the chicken sandwiches and the chicken nuggets are okay.',
-        date: '2024-01-03',
-        user: {
-          id: '3',
-          name: 'John Smith',
-        },
-      },
-    ],
+    name: 'American',
+  },
+  {
+    id: '4',
+    name: 'Chicken',
   },
 ]
 

@@ -1,19 +1,23 @@
 export type RestaurantResponse = {
-  id: string
-  name: string
-  description: string
-  logoUrl: string
-  heroImageUrl: string
-  categories: RestaurantCategoryResponse[]
-  deliveryFee: number
-  deliveryTime: [number, number]
-  offersDelivery: boolean
-  offersPickup: boolean
-  offersGroupOrders: boolean
-  businessHours: [string, string]
-  rating: number
-  numRatings: number
-  reviews: ReviewResponse[]
+  attributes: {
+    id: string
+    name: string
+    description: string
+    logoUrl: string
+    heroImageUrl: string
+    deliveryFee: number
+    deliveryTime: [number, number]
+    offersDelivery: boolean
+    offersPickup: boolean
+    offersGroupOrders: boolean
+    businessHours: [string, string]
+    rating: number
+    numRatings: number
+  }
+  relationships: {
+    categories: string[]
+    reviews: ReviewResponse[]
+  }
 }
 
 export type MenuResponse = {
@@ -21,7 +25,7 @@ export type MenuResponse = {
   items: MenuItemResponse[]
 }
 
-type RestaurantCategoryResponse = {
+export type RestaurantCategoryResponse = {
   id: string
   name: string
 }

@@ -1,6 +1,12 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { restaurants, menuItemCategories, menuItems, reviews } from './db'
+import {
+  restaurants,
+  restaurantCategories,
+  menuItemCategories,
+  menuItems,
+  reviews,
+} from './db'
 const app = new Hono()
 
 app.get('/', (c) => {
@@ -13,7 +19,7 @@ app.get('/restaurants', (c) => {
 
 app.get('/restaurants/:restaurantId', async (c) => {
   const { restaurantId } = c.req.param()
-  const restaurant = restaurants.find((r) => r.id === restaurantId)
+  const restaurant = restaurants.find((r) => r.attributes.id === restaurantId)
 
   if (!restaurant) {
     return c.status(404)
@@ -24,7 +30,7 @@ app.get('/restaurants/:restaurantId', async (c) => {
 
 app.get('/restaurants/:restaurantId/menu', async (c) => {
   const { restaurantId } = c.req.param()
-  const restaurant = restaurants.find((r) => r.id === restaurantId)
+  const restaurant = restaurants.find((r) => r.attributes.id === restaurantId)
   if (!restaurant) {
     return c.status(404)
   }
@@ -41,12 +47,23 @@ app.get('/restaurants/:restaurantId/menu', async (c) => {
 
 app.get('/restaurants/:restaurantId/reviews', async (c) => {
   const { restaurantId } = c.req.param()
-  const restaurant = restaurants.find((r) => r.id === restaurantId)
+  const restaurant = restaurants.find((r) => r.attributes.id === restaurantId)
   if (!restaurant) {
     return c.status(404)
   }
 
   return c.json(reviews[restaurantId as keyof typeof reviews])
+})
+
+app.get('/categories', async (c) => {
+  const { ids } = c.req.query()
+  const categoryIds = ids?.split(',')
+  const categories =
+    categoryIds && categoryIds.length > 0
+      ? restaurantCategories.filter((c) => categoryIds.includes(c.id))
+      : restaurantCategories
+
+  return c.json(categories)
 })
 
 const port = 3002
