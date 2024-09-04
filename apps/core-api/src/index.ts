@@ -19,7 +19,7 @@ app.get('/restaurants', (c) => {
 
 app.get('/restaurants/:restaurantId', async (c) => {
   const { restaurantId } = c.req.param()
-  const restaurant = restaurants.find((r) => r.attributes.id === restaurantId)
+  const restaurant = restaurants.find((r) => r.id === restaurantId)
 
   if (!restaurant) {
     return c.status(404)
@@ -30,7 +30,7 @@ app.get('/restaurants/:restaurantId', async (c) => {
 
 app.get('/restaurants/:restaurantId/menu', async (c) => {
   const { restaurantId } = c.req.param()
-  const restaurant = restaurants.find((r) => r.attributes.id === restaurantId)
+  const restaurant = restaurants.find((r) => r.id === restaurantId)
   if (!restaurant) {
     return c.status(404)
   }
@@ -47,7 +47,7 @@ app.get('/restaurants/:restaurantId/menu', async (c) => {
 
 app.get('/restaurants/:restaurantId/reviews', async (c) => {
   const { restaurantId } = c.req.param()
-  const restaurant = restaurants.find((r) => r.attributes.id === restaurantId)
+  const restaurant = restaurants.find((r) => r.id === restaurantId)
   if (!restaurant) {
     return c.status(404)
   }

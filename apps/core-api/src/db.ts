@@ -1,7 +1,7 @@
 export const restaurants = [
   {
+    id: '1',
     attributes: {
-      id: '1',
       name: 'Taco Bell',
       description:
         'Taco Bell is a fast food restaurant that serves tacos and other Mexican-inspired dishes.',
@@ -53,8 +53,8 @@ export const restaurants = [
     },
   },
   {
+    id: '2',
     attributes: {
-      id: '2',
       name: 'McDonalds',
       description:
         'McDonalds is a fast food restaurant that serves burgers and other American-inspired dishes.',
@@ -106,8 +106,8 @@ export const restaurants = [
     },
   },
   {
+    id: '3',
     attributes: {
-      id: '3',
       name: 'Chick-fil-A',
       description:
         'Chick-fil-A is a fast food restaurant that serves chicken sandwiches and other American-inspired dishes.',

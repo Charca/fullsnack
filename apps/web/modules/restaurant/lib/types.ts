@@ -1,6 +1,6 @@
 export type RestaurantResponse = {
+  id: string
   attributes: {
-    id: string
     name: string
     description: string
     logoUrl: string
