@@ -9,7 +9,7 @@ import { RatingsSummary } from './features/ratings-summary/ratings-summary'
 import { MenuCategory } from './features/menu-category/menu-category'
 import { Ratings } from './features/ratings/ratings'
 
-export function RestaurantScreen() {
+export async function RestaurantScreen() {
   return (
     <div className="container mx-auto p-4">
       <RestaurantHeader />
