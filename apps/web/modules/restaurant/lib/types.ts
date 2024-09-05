@@ -30,7 +30,7 @@ export type RestaurantCategoryResponse = {
   name: string
 }
 
-type ReviewResponse = {
+export type ReviewResponse = {
   id: string
   rating: number
   comment: string

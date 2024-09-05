@@ -18,3 +18,9 @@ export type CustomerReview = {
   date: string
   userName: string
 }
+
+export type Ratings = {
+  rating: number
+  numRatings: number
+  reviews: CustomerReview[]
+}
